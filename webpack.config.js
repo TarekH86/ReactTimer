@@ -35,6 +35,8 @@ module.exports = {
             apllicationStyle: path.resolve(__dirname, 'app/styles/app.scss'),
             CSS: path.resolve(__dirname, 'app/styles/app.css'),
             Nav: path.resolve(__dirname, 'app/components/nav.jsx'),
+            Timer: path.resolve(__dirname, 'app/components/timer.jsx'),
+            CountDown: path.resolve(__dirname, 'app/components/count-down.jsx'),
         },
         extensions: [".js", ".jsx"] // to enables users to leave off the extension when importing
     },
