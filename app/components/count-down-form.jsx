@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 class CountDownForm extends Component {
     onSubmit = (e) => {
         e.preventDefault();
@@ -12,7 +13,7 @@ class CountDownForm extends Component {
     }
     render() {
         return (
-            <div>
+            <div classname="form">
                 <form ref="form" onSubmit={this.onSubmit} className="countdown-from">
                     <input type="text" ref="seconds" placeholder="Enter time in seconds" />
                     <button className="button expanded">Start</button>

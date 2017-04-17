@@ -10,7 +10,7 @@ class Main extends Component {
             <div>
                 <Nav />
                 <div className="row">
-                    <div className="column small-centerd medium-6 larg-4">  
+                    <div className="column small-centerd medium-6-centerd larg-4-centerd">  
                         {this.props.children}
                     </div>
                 </div>
