@@ -2,7 +2,6 @@ const webpack = require('webpack'); //to access built-in plugins
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-
 const extractSass = new ExtractTextPlugin({
     filename: "./app/styles/app.css",
     disable: process.env.NODE_ENV === "development"
@@ -23,7 +22,17 @@ module.exports = {
         new webpack.ProvidePlugin({
             '$': 'jquery',
             'jQuery': 'jquery'
-        })
+        }),
+        new webpack.LoaderOptionsPlugin({
+    options: {
+        context: '/', 
+        sassLoader: {
+            includePaths: [
+                path.resolve(__dirname, './node_modules/foundation-sites/scss'),
+            ]
+        }
+    }
+})
     ],
     output: {
         path: __dirname,
