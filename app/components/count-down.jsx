@@ -16,6 +16,7 @@ class CountDown extends Component {
         });
     }
 
+// Life Cycle:
     componentDidUpdate = (prevProps, prevState) => { // called when the props or state is updating;
         if (this.state.countdownStatus !== prevState.countdownStatus) {
             switch (this.state.countdownStatus) {
@@ -32,12 +33,32 @@ class CountDown extends Component {
         }
     }
 
-    startTimer = () => {
+    // componentWillUpdate = (nextProps, nextState) => {
+        
+    // }
+
+    // componentWillMount = () => { // will fierd before get render
+    //     console.log('componentWillMount')
+    // }
+    // componentDidMount = () => { // will fired just the component get renderd
+    //     console.log('componentDidMount')
+    // }
+
+    componentWillUnmount = () => { // will fired onDestroy
+        console.log('componentDidUnmount');
+        clearInterval(this.timer);
+        this.timer = undefined;
+    }
+// ----------------------------
+     startTimer = () => {
         this.timer = setInterval(() => {
             let newCount = this.state.count - 1;
             this.setState({
                 count: newCount >= 0 ? newCount : 0
             });
+            if(newCount === 0){
+            this.setState({countdownStatus: 'stopped'}) ;
+            }
         }, 1000)
     }
     
@@ -56,7 +77,6 @@ class CountDown extends Component {
             return <CountDownForm onSetCountdown={this.handleSetCountdown} />
         }
     }
-
 
     render() {
         const { count } = this.state;
