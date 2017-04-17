@@ -4,9 +4,13 @@ import CountDownForm from 'CountDownForm';
 import Controls from 'Controls';
 
 class CountDown extends Component {
-    state = {
-        count: 0,
-        countdownStatus: 'stopped'
+
+    constructor(props){
+        super(props);
+    this.state = {
+             count: 0,
+            countdownStatus: 'stopped'
+        }
     }
 
     handleSetCountdown = (seconds) => {
@@ -65,7 +69,7 @@ class CountDown extends Component {
     handleStatusChange = (newStatus) => {
         this.setState({
             countdownStatus: newStatus
-        })
+        });
     }
 
     renderContolArea = () => {
