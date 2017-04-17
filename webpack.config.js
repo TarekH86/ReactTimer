@@ -39,6 +39,7 @@ module.exports = {
             CountDown: path.resolve(__dirname, 'app/components/count-down.jsx'),
             Clock: path.resolve(__dirname, 'app/components/clock.jsx'),
             CountDownForm: path.resolve(__dirname, 'app/components/count-down-form.jsx'),
+            Controls: path.resolve(__dirname, 'app/components/controls.jsx'),
         },
         extensions: [".js", ".jsx"] // to enables users to leave off the extension when importing
     },
