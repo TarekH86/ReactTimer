@@ -8,10 +8,9 @@ class Main extends Component {
     render() {
         return (
             <div>
-                <div  >
-                    <Nav />
-                    <div>
-                        <p>Main.jsx Renderd</p>
+                <Nav />
+                <div className="row">
+                    <div className="column small-centerd medium-6 larg-4">  
                         {this.props.children}
                     </div>
                 </div>
