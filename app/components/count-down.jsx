@@ -82,7 +82,8 @@ class CountDown extends Component {
         const { count } = this.state;
         return (
             <div>
-                <Clock totalSeconds={count} />
+                <h1 className="page-title">Countdown App</h1>
+              <Clock totalSeconds={count} />
                 {this.renderContolArea()}
             </div>
         );
